@@ -1,0 +1,14 @@
+<div class="box">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <fieldset>
+            <legend>Login</legend>
+            <input type="text" placeholder="Username" required name="username" [(ngModel)]="user.userName">
+            <input type="password" placeholder="Password" required name="password" [(ngModel)]="user.password">
+            <input type="submit" value="LOGIN">
+            <p><span>Not Registered? </span><a routerLink="/register">Create an account</a></p>
+        </fieldset>
+        <div class="alert alert-danger" *ngIf="warning">
+            {{warning}}
+        </div>
+    </form>
+</div>

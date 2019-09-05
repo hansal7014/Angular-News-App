@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Create an Account</h2>
+        <hr />
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" name="username" type="text" placeholder="User Name"  [(ngModel)]="user.userName" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" name="password" type="password" placeholder="Password" [(ngModel)]="user.password" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" name="password2" type="password" placeholder="Confirm Password" [(ngModel)]="user.password2" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input class="form-control" name="fullname" type="text" placeholder="Full Name" [(ngModel)]="user.fullName" required />
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success btn-block" value="Register" />
+            <hr *ngIf="warning || success"/>
+            <div class="alert alert-danger" *ngIf="warning">
+                {{warning}}
+            </div>
+            <div class="alert alert-success" *ngIf="success">
+                {{success}}
+            </div>
+        </form>
+       <hr/> 
+    <div routerLink="/login" class="btn btn-primary btn-block">Return To Login Page</div>
+    </div>
+</div>
+
